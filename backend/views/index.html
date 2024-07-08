@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Curso JS Avanzado!</h1>
+        <h2>Clase 10</h2>
+    </header>
+    <main>
+        <button id="crear_cookie">Crear Cookie</button>
+        <button id="leer_cookie">Leer Cookie</button>
+    </main>
+    <script>
+        document.getElementById("crear_cookie").addEventListener("click", function (){
+            const nombre = "session-id"
+            const valor = Math.random()
+            const fechaDeExpiracion = new Date() +2
+            document.cookie = `${nombre}=${valor}; expires = ${fechaDeExpiracion}; path=/`
+            document.getElementById("div-resultado").innerHTML = `Cookie guardada:  ${nombre}: ${valor}`
+        })
+        document.getElementById("leer_cookie").addEventListener("click", function(){
+            alert("Leer Cookie")
+        })
+    </script>
+    <div id="div-resultado">
+
+    </div>
+</body>
+</html>
